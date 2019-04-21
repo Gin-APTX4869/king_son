@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/loading.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.min.css">
+    <title>Demo</title>
+</head>
+<body>
+    <div class="page bg">
+    
+    <!--背景音乐-->
+    <div id="bg_music"></div>
+    <!--背景音乐-->
+    <div class="swiper-container">
+        <div id="bg_music_btn" num='1'></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="start"><p style="color:aliceblue; text-align:center;font-size:12px;">向上拖动</p><img src="./images/down.png" alt=""></div>
+                <img src="./images/1.jpg" alt="">
+            </div>
+            <div class="swiper-slide"><div id="demo1"><div class="move"><img src="./images/down.png" alt=""></div></div></div>
+            <div class="swiper-slide"><div id="demo2"><div class="move"><img src="./images/down.png" alt=""></div></div></div>
+            <div class="swiper-slide"><div id="demo3"><div class="move"><img src="./images/down.png" alt=""></div></div></div>
+            <div class="swiper-slide"><div id="demo4"><div class="move"><img src="./images/down.png" alt=""></div></div></div>
+            <div class="swiper-slide"><div id="demo5"><div class="move"><img src="./images/down.png" alt=""></div></div></div>
+            <div class="swiper-slide"><div id="demo6"><div class="move"><img src="./images/down.png" alt=""></div></div></div>
+            <div class="swiper-slide"><div id="demo7"><div class="move"><img src="./images/down.png" alt=""></div></div></div>
+        </div>
+    </div>
+    </div>
+    <script src="./js/loading.js"></script>
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/swiper-3.4.2.jquery.min.js"></script>
+    <script src="./js/bodymovin.min.js"></script>
+    <script src="./js/main.min.js"></script> 
+    <script>
+    Pace.on("done", function(){
+    $('.page').fadeIn(1000)
+    $('.start').fadeIn()
+    $(function () {
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'vertical',
+            grabCursor: true,
+            loop: false,
+            onSlideChangeEnd: function(swiper){
+                if(swiper.realIndex === 0){
+                    $('.start').fadeIn()
+                    anim1.goToAndStop(0, false)
+                    anim2.goToAndStop(0, false)
+                    anim3.goToAndStop(0, false)
+                    anim4.goToAndStop(0, false)
+                    anim5.goToAndStop(0, false)
+                    anim6.goToAndStop(0, false)
+                    anim7.goToAndStop(0, false)
+                }
+                if(swiper.realIndex === 1){
+                    $('.start').fadeOut()
+                    anim1.play()
+                    anim2.goToAndStop(0, false)
+                    anim3.goToAndStop(0, false)
+                    anim4.goToAndStop(0, false)
+                    anim5.goToAndStop(0, false)
+                    anim6.goToAndStop(0, false)
+                    anim7.goToAndStop(0, false)
+                }
+                if(swiper.realIndex === 2){
+                    $('.start').fadeOut()
+                    anim2.play()
+                    anim1.goToAndStop(0, false)
+                    anim3.goToAndStop(0, false)
+                    anim4.goToAndStop(0, false)
+                    anim5.goToAndStop(0, false)
+                    anim6.goToAndStop(0, false)
+                    anim7.goToAndStop(0, false)
+                }
+                if(swiper.realIndex === 3){
+                    $('.start').fadeOut()
+                    anim3.play()
+                    anim1.goToAndStop(0, false)
+                    anim2.goToAndStop(0, false)
+                    anim4.goToAndStop(0, false)
+                    anim5.goToAndStop(0, false)
+                    anim6.goToAndStop(0, false)
+                    anim7.goToAndStop(0, false)
+                }
+                if(swiper.realIndex === 4){
+                    $('.start').fadeOut()
+                    anim4.play()
+                    anim1.goToAndStop(0, false)
+                    anim2.goToAndStop(0, false)
+                    anim3.goToAndStop(0, false)
+                    anim5.goToAndStop(0, false)
+                    anim6.goToAndStop(0, false)
+                    anim7.goToAndStop(0, false)
+                }
+                if(swiper.realIndex === 5){
+                    $('.start').fadeOut()
+                    anim5.play()
+                    anim1.goToAndStop(0, false)
+                    anim2.goToAndStop(0, false)
+                    anim3.goToAndStop(0, false)
+                    anim4.goToAndStop(0, false)
+                    anim6.goToAndStop(0, false)
+                    anim7.goToAndStop(0, false)
+                }
+                if(swiper.realIndex === 6){
+                    $('.start').fadeOut()
+                    anim6.play()
+                    anim1.goToAndStop(0, false)
+                    anim2.goToAndStop(0, false)
+                    anim3.goToAndStop(0, false)
+                    anim4.goToAndStop(0, false)
+                    anim5.goToAndStop(0, false)
+                    anim7.goToAndStop(0, false)
+                }
+                if(swiper.realIndex === 7){
+                    $('.start').fadeOut()
+                    anim7.play()
+                    anim1.goToAndStop(0, false)
+                    anim2.goToAndStop(0, false)
+                    anim3.goToAndStop(0, false)
+                    anim4.goToAndStop(0, false)
+                    anim5.goToAndStop(0, false)
+                    anim6.goToAndStop(0, false)
+                }
+            }
+        })
+        
+        $('#bg_music').append('<audio id="m_bg_music" loop="loop" preload="auto" autoplay="autoplay" src="./bgm.mp3" />');
+        var mp3=$('#m_bg_music')[0];
+
+        $('#bg_music_btn').click(function(){
+            var num = $('#bg_music_btn').attr('num');
+            if(num == "1")
+            {
+                $('#bg_music_btn').attr('num','0');
+                mp3.pause();
+                $('#bg_music_btn').addClass('stop');
+            }
+            if(num == "0")
+            {
+                $('#bg_music_btn').attr('num','1');
+                mp3.play();
+                $('#bg_music_btn').removeClass('stop');
+            }
+        })
+    })
+    })
+    </script>
+</body>
+</html>
